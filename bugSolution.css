@@ -1,0 +1,17 @@
+To fix this issue, ensure that all quotes within the `content` string are properly escaped.  The most common way is to use backslashes to escape double quotes (") or single quotes (').
+
+For example, instead of:
+
+```css
+.element::before { content: "This string contains a "quote" that's not escaped"; }
+```
+
+Use:
+
+```css
+.element::before { content: "This string contains a \"quote\" that's escaped"; }
+```
+
+Alternatively, if your content uses single quotes, you can use double quotes as the outer quotes and escape single quotes in the same way.
+
+This approach ensures that the CSS parser correctly interprets the entire string assigned to the `content` property, preventing the unexpected behavior.
